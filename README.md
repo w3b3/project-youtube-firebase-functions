@@ -24,3 +24,22 @@ In this repo, we use firebase to manipulate Youtube API:
 - **Retrieve user's Youtube subscriptions to channels**.
 - Saves `{q: {...}}` to Firestore (through [receiveQueryAndFirestoreIt](http://localhost:5001/api-secret-keeper/us-central1/receiveQueryAndFirestoreIt)). Using [got](https://www.npmjs.com/package/got#comparison) package ~~instead of axios~~
 - Returns list.
+
+# TODO
+
+## Split function into multiple files
+index.ts
+```js
+const foo = require('./foo');
+const bar = require('./bar');
+exports.foo = foo.foo;
+exports.bar = bar.bar;
+```
+
+foo.ts
+```js
+const functions = require('firebase-functions');
+exports.foo = functions.https.onRequest((request, response) => {
+  // ...
+});
+```
