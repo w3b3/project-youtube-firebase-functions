@@ -43,3 +43,12 @@ exports.foo = functions.https.onRequest((request, response) => {
   // ...
 });
 ```
+
+# NOTES
+
+## Firebase emulator
+
+For every environment variable to work with local emulator, first run this
+`firebase functions:config:get > .runtimeconfig.json`
+
+## ...
