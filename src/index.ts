@@ -1,10 +1,12 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 
+const got = require('got').default; //Error if not CommonJS https://github.com/axios/axios#note-commonjs-usage
+
 admin.initializeApp();
 
 //TODO: fix this with some ENV
-// const BASE_URL = 'http://localhost:5001/api-secret-keeper/us-central1/';
+const BASE_URL = 'http://localhost:5001/api-secret-keeper/us-central1/';
 
 export const receiveQueryAndFirestoreIt = functions.https.onRequest(async (request, response) => {
     const q = request.body.q;
@@ -27,9 +29,12 @@ export const retrieveSubscriptionsForUser = functions.https.onRequest(async (req
     //TODO: get user ID
     if (userId) {
         //TODO: call Youtube API to get list of subscriptions
-        const subscriptions = {userId}; //DEBUG
-        // TODO: save the list of subscriptions in Firestore
-        //  fetch(`${receiveQueryAndFirestoreIt}receiveQueryAndFirestoreIt`, {q: subscriptions})
+        const subscriptions = [12, 345, 6789];
+        // save the list of subscriptions in Firestore
+        const r = {userId, subscriptions};
+        got(`${BASE_URL}receiveQueryAndFirestoreIt`, {
+            method: 'POST', json: {q: r}, responseType: 'json'
+        });
         // TODO: return list of subscriptions
         response.json({
             subscriptions
