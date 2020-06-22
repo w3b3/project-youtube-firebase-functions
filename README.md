@@ -46,7 +46,7 @@ exports.foo = functions.https.onRequest((request, response) => {
 
 # NOTES
 
-## Firebase emulator
+## [Firebase emulator](https://firebase.google.com/docs/functions/local-emulator#windows)
 
 For every environment variable to work with local emulator, first run this
 `firebase functions:config:get > .runtimeconfig.json`
