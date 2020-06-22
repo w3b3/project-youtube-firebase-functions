@@ -20,6 +20,7 @@ In this repo, we use firebase to manipulate Youtube API:
 
 ## [retrieveSubscriptionsForUser](http://localhost:5001/api-secret-keeper/us-central1/retrieveSubscriptionsForUser) 
 
-- *Authenticate user*.
-- **Retrieve list of subscriptions for the user**.
+- *Authenticate user with Google*.
+- **Retrieve user's Youtube subscriptions to channels**.
+- Saves `{q: {...}}` to Firestore (through [receiveQueryAndFirestoreIt](http://localhost:5001/api-secret-keeper/us-central1/receiveQueryAndFirestoreIt)). Using [got](https://www.npmjs.com/package/got#comparison) package ~~instead of axios~~
 - Returns list.
