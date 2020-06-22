@@ -5,8 +5,8 @@ const got = require('got').default; //Error if not CommonJS https://github.com/a
 
 admin.initializeApp();
 
-//TODO: fix this with some ENV
-const BASE_URL = 'http://localhost:5001/api-secret-keeper/us-central1/';
+// TODO: [HOW?] replace IN DEV ONLY the api.base_url WITH url in ./.env => DEV_BASE_URL
+const BASE_URL = functions.config().api.base_url;
 
 export const receiveQueryAndFirestoreIt = functions.https.onRequest(async (request, response) => {
     const q = request.body.q;
