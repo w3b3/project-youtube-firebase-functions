@@ -13,12 +13,12 @@ In this repo, we use firebase to manipulate Youtube API:
 
 ## API
 
-## [receiveQueryAndFirestoreIt](http://localhost:5001/api-secret-keeper/us-central1/receiveQueryAndFirestoreIt) 
+## receiveQueryAndFirestoreIt 
 
 - endpoint (no YT feat here) to demo *Functions* and *Firestore*. 
 - Does exactly what it says (receives `q` in the body - if not, return *400*).
 
-## [retrieveSubscriptionsForUser](http://localhost:5001/api-secret-keeper/us-central1/retrieveSubscriptionsForUser) 
+## retrieveSubscriptionsForUser 
 
 - *Authenticate user with Google*.
 - **Retrieve user's Youtube subscriptions to channels**.
