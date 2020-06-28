@@ -55,7 +55,8 @@ export const retrieveSubscriptionsForUser = functions.https.onRequest(
         subscriptions,
       };
       try {
-        got(`${_url}receiveQueryAndFirestoreIt`, {
+        // Must await, otherwise f() terminates before 'got' resolves
+        await got(`${_url}receiveQueryAndFirestoreIt`, {
           method: 'POST',
           json: { q: r },
           responseType: 'json',
