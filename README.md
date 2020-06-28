@@ -8,8 +8,8 @@ In this repo, we use firebase to manipulate Youtube API:
 
 ## Get started
 
-- `npm i`
-- `npm run serve` - builds the code and runs the [emulator](http://localhost:4000/)
+- If it is the first time running this code, go for `npm i`
+- `npm start` - builds the code and runs the [emulators](http://localhost:4000/)
 
 ## API
 
@@ -22,7 +22,7 @@ In this repo, we use firebase to manipulate Youtube API:
 
 - *Authenticate user with Google*.
 - **Retrieve user's Youtube subscriptions to channels**.
-- Saves `{q: {...}}` to Firestore (through [receiveQueryAndFirestoreIt](http://localhost:5001/api-secret-keeper/us-central1/receiveQueryAndFirestoreIt)). Using [got](https://www.npmjs.com/package/got#comparison) package ~~instead of axios~~
+- Saves `{q: {...}}` to Firestore (through receiveQueryAndFirestoreIt. Using [got](https://www.npmjs.com/package/got#comparison) package ~~instead of axios~~
 - Returns list.
 
 # TODO
